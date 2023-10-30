@@ -1,5 +1,11 @@
 <?php
-require('header.php')
+session_start();
+require('header.php');
+
+if ($_SESSION['aviso']) {
+    echo $_SESSION['aviso'];
+    $_SESSION['aviso'] = '';
+}
 ?>
 
 <form method="post" action="receiver.php">
@@ -12,6 +18,14 @@ require('header.php')
         <br>
     </br>
 
+    <label >
+        email:
+        <br>
+        <input type="text" name="email" id=""/>
+    </label>
+        <br>
+        <br>
+    </br>
 
     <label >
         Idade:
